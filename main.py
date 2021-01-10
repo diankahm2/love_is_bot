@@ -104,7 +104,7 @@ def admin_checking(update: Update, context: CallbackContext) -> int:
                 return send_photo(update, context)
             else:
                 reply_keyboard = [['Начать регистрацию'],['Отправить чек сначала']]
-                updater.bot.send_message(text="Ваш чек не был подтвержден пожайлуста попробуйте позже или нажмите отправьте чек еще раз", chat_id=update.message.chat_id, reply_markup=ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True))
+                updater.bot.send_message(text="Ваш чек не был п∂одтвержден пожайлуста попробуйте позже или нажмите отправьте чек еще раз", chat_id=update.message.chat_id, reply_markup=ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True))
                 return ADMIN_CHECKING1
         else:
             return start(update, context)
