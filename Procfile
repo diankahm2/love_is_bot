@@ -1,1 +1,1 @@
-worker: python send_file.py
+web: python send_file.py
