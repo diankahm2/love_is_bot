@@ -17,7 +17,7 @@ bot.
 """
 
 import logging
-import database
+#import database
 
 import telegram
 from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove, Update, InlineKeyboardButton, InlineKeyboardMarkup, bot
@@ -299,9 +299,9 @@ def bio(update: Update, context: CallbackContext) -> int:
 def check(update: Update, context: CallbackContext) -> int:
     print("user information", context.user_data)
     user_data = context.user_data
-    database.add(user_data["gender"], user_data["photo"], user_data["age"], user_data["surname"], user_data["surname"], user_data["ru"], user_data["height"], user_data["speciality"], user_data["income"], user_data["insta"], user_data["bio"], update.message.chat_id)
-    database.add_chat_gender(update.message.chat_id,user_data["gender"] )
-    database.show_parthers(update.message.chat_id)
+    #database.add(user_data["gender"], user_data["photo"], user_data["age"], user_data["surname"], user_data["surname"], user_data["ru"], user_data["height"], user_data["speciality"], user_data["income"], user_data["insta"], user_data["bio"], update.message.chat_id)
+    #database.add_chat_gender(update.message.chat_id,user_data["gender"] )
+    #database.show_parthers(update.message.chat_id)
 
     user = update.message.from_user
     if update.message.text == 'Правильно':
@@ -319,7 +319,7 @@ def check(update: Update, context: CallbackContext) -> int:
         return SEARCHING
 
     else:
-        update.message.reply_text('Спасибо что заполнили', reply_markup=ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True),)
+        update.message.reply_text('Спасибо что заполнили')
 
         return SEARCHING
 
@@ -327,9 +327,9 @@ def check(update: Update, context: CallbackContext) -> int:
 def searching(update: Update, context: CallbackContext) -> int:
     print("yyyyyy")
 
-    database.show_parthers(update.message.chat_id)
+    #database.show_parthers(update.message.chat_id)
 
-    print("for shahmar", database.show_parthers(update.message.chat_id))
+    #print("for shahmar", database.show_parthers(update.message.chat_id))
 
     if update.message.text == 'Дальше':
 
