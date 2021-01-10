@@ -1,10 +1,18 @@
 import mysql.connector
 
-mydb = mysql.connector.connect(
+'''mydb = mysql.connector.connect(
   host="localhost",
   user="root",
   password="Diana123!!",
   database="loveis"
+)'''
+
+
+mydb = mysql.connector.connect(
+  host="us-cdbr-east-02.cleardb.com",
+  user="b11088f57988af",
+  password="3d241aff",
+  database="heroku_e91cf812cc22dfc"
 )
 
 print(mydb)
@@ -50,12 +58,14 @@ for x in myresult:
 '''
 #mycursor.execute("drop TABLE chat_gender")
 #mycursor.execute("CREATE TABLE clients_male (id INT AUTO_INCREMENT PRIMARY KEY, gender VARCHAR(255), photo VARCHAR(255), name VARCHAR(255), surname VARCHAR(255), age VARCHAR(255), ru VARCHAR(255),"
-         #        "height VARCHAR(255), job VARCHAR(255), income VARCHAR(255), insta VARCHAR(255), about VARCHAR(255), chat_id VARCHAR(255), viewed VARCHAR(255))")
+ #                "height VARCHAR(255), job VARCHAR(255), income VARCHAR(255), insta VARCHAR(255), about VARCHAR(255), chat_id VARCHAR(255), viewed VARCHAR(255))")
+#mycursor.execute("CREATE TABLE clients_female (id INT AUTO_INCREMENT PRIMARY KEY, gender VARCHAR(255), photo VARCHAR(255), name VARCHAR(255), surname VARCHAR(255), age VARCHAR(255), ru VARCHAR(255),"
+ #                "height VARCHAR(255), job VARCHAR(255), income VARCHAR(255), insta VARCHAR(255), about VARCHAR(255), chat_id VARCHAR(255), viewed VARCHAR(255))")
 
 #mycursor.execute("CREATE TABLE chat_gender (id INT AUTO_INCREMENT PRIMARY KEY, chat_id VARCHAR(255), gender VARCHAR(255), username VARCHAR(255) )")
 #mycursor.execute("show tables")
 #for x in mycursor:
-# print(x)
+ #print(x)
 
 
 #mycursor.execute("CREATE TABLE likes (id INT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(255), liked_username VARCHAR(255))")
@@ -198,7 +208,7 @@ def get_username_by_chat_id(chat_id):
         print("username to send", x)
     return x
 
-print(get_username_by_chat_id(426352620))
+#print(get_username_by_chat_id(426352620))
 
 def match (username):
     sql = "SELECT username, GROUP_CONCAT(liked_username) from likes where username='%s' AND liked_username in (SELECT username from likes) group by username"%(username)

@@ -1,1 +1,1 @@
-web: python send_file.py
+web: python main.py

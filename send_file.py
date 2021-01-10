@@ -49,7 +49,6 @@ question_rus = ["Отправьте фото", "Напишите ваш пол",
                 "Опишите себя в пару предложений"]
 users_1 = []
 users_2 = []
-
 updater = Updater("1415351884:AAHmLW6l-z6vLqVIHtw-KwzomMydkel6MZw", use_context=True)
 #425471123 = Diana
 
